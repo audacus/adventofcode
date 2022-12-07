@@ -1,7 +1,6 @@
 use std::error::Error;
-use std::{env, fs};
 use std::process;
-
+use std::{env, fs};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -26,9 +25,7 @@ fn run(config: Config) -> Result<(), Box<dyn Error>> {
     println!("Most calories: {most_calories}");
 
     calories.sort();
-
     let top_three_sum: u32 = calories.iter().rev().take(3).sum();
-
     println!("Top 3 calories sum: {top_three_sum}");
 
     Ok(())
